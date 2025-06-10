@@ -1,0 +1,31 @@
+<h1>Submitted Data</h1>
+<h3>User hash:</h3>
+<ul>
+    <% @user.each do |key, value|%>
+    <li><strong><%= key.capitalize %>:</strong><%= value%></li>
+    <% end %>
+</ul>
+
+<h3>Hobbies Array:</h3>
+<ul>
+    <% @hobbies.each do |hobby| %>
+    <li><%= hobby %></li>
+    <% end %>
+</ul>
+
+<%= link_to "Back" , new_profile_path %>
+
+<h3>Preferences JSON:</h3>
+<% if @Preferences.is_a? (Hash)%>
+<ul>
+    <% @preferences.each do |key, value|%>
+    <li><strong><%= key %>:</strong> <%=value %></li>
+    <% end %>
+</ul>
+
+<% else %>
+<p><%= @preferences%></p>
+<% end %>
+
+<%= link_to "Back", new_profile_path %>
+<%= link_to "View Department 10 of University 42", university_department_path(42, 10), class: "button" %>

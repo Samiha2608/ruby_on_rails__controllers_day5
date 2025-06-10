@@ -1,0 +1,32 @@
+<h1>New Profiles</h1>
+<%= form_with url: profiles_path, method: :post do%>
+<h3>User (Hash):</h3>
+<div>
+    <%= label_tag "user[name]", "Name"%>
+    <%= text_field_tag "user[name]"%>
+</div>
+
+<div>
+    <%= label_tag "user[age]", "Age"%>
+    <%= number_field_tag "user[age]"%>
+</div>
+
+<h3>Hobbies (Array):</h3>
+<div>
+    <%= label_tag "hobbies[]", "Hobby 1"%>
+    <%= text_field_tag "hobbies[]", ""%>
+</div>
+
+<div>
+    <%= label_tag "hobbies[]", "Hobby 2"%>
+    <%= text_field_tag "hobbies[]", ""%>
+</div>
+
+<h3>Preferences (JSON string):</h3>
+<div>
+    <%= label_tag "preferences_json", "Preferences JSON"%><br>
+    <%= text_area_tag "preferences_json", '{"newsletter": true , "theme": "dark"}', rows: 5, cols: 40 %>
+</div>
+
+<%= submit_tag "Submit"%>
+<% end %>
